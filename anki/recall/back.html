@@ -1,0 +1,23 @@
+<main class="card-shell production-card">
+  <div class="eyebrow">RECALL · ANSWER</div>
+
+  <div class="definition">{{English}}</div>
+  <div class="answer-divider"></div>
+
+  <div class="hanzi compact">{{Hanzi}}</div>
+  <div class="pinyin">{{Pinyin}}</div>
+
+  {{#Sound}}
+  <div class="audio-panel">
+    <span>Audio</span>
+    {{Sound}}
+  </div>
+  {{/Sound}}
+
+  {{#Usage}}
+  <section class="context">
+    <span>In context</span>
+    <div>{{Usage}}</div>
+  </section>
+  {{/Usage}}
+</main>

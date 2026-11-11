@@ -1,0 +1,22 @@
+<main class="card-shell reading-card">
+  <div class="eyebrow">READING · ANSWER</div>
+  <div class="hanzi compact">{{Hanzi}}</div>
+  <div class="pinyin">{{Pinyin}}</div>
+
+  <div class="answer-divider"></div>
+  <div class="definition">{{English}}</div>
+
+  {{#Sound}}
+  <div class="audio-panel">
+    <span>Audio</span>
+    {{Sound}}
+  </div>
+  {{/Sound}}
+
+  {{#Usage}}
+  <section class="context">
+    <span>In context</span>
+    <div>{{Usage}}</div>
+  </section>
+  {{/Usage}}
+</main>

@@ -1,0 +1,295 @@
+/* Recognition & Recall · Quiet lavender */
+
+:root,
+body.nightMode,
+body.night_mode,
+.card.nightMode,
+.card.night_mode {
+  color-scheme: light;
+
+  --page: #f5f3f8;
+  --surface: #fffefd;
+  --surface-soft: #f7f5fa;
+  --text: #40394d;
+  --muted: #82758f;
+  --accent: #80639e;
+  --accent-2: #6b4e87;
+  --border: #e9e3ee;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+.card,
+body.nightMode,
+body.night_mode,
+.card.nightMode,
+.card.night_mode {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--page) !important;
+  color: var(--text) !important;
+}
+
+.card {
+  padding: clamp(16px, 5vw, 40px);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Noto Sans SC",
+    "PingFang SC",
+    sans-serif;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+.card-shell {
+  width: min(100%, 640px);
+  margin: 0 auto;
+  padding: clamp(28px, 6vw, 44px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 5px 22px rgba(64, 57, 77, 0.035);
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+/* Recognition */
+
+.reading-card .hanzi.compact {
+  margin: 1.4rem auto 0.5rem;
+  color: var(--text);
+  font-size: clamp(2.75rem, 9vw, 3.75rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.035em;
+  overflow-wrap: anywhere;
+}
+
+.question-card {
+  padding-top: 38px;
+  padding-bottom: 44px;
+}
+
+.question-card .hanzi.compact {
+  margin-bottom: 0;
+}
+
+.reading-card .pinyin {
+  margin: 0.35rem auto 0;
+  color: var(--accent);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* Divider */
+
+.answer-divider {
+  width: 100%;
+  height: 1px;
+  margin: 1.75rem auto 1.4rem;
+  background: var(--border);
+  border: 0;
+}
+
+/* Definitions */
+
+.definition {
+  max-width: 52ch;
+  margin: 0 auto;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  text-align: left;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.definition p {
+  margin: 0 0 0.75em;
+}
+
+.definition p:last-child {
+  margin-bottom: 0;
+}
+
+.definition ul,
+.definition ol {
+  margin: 0.5em 0;
+  padding-left: 1.35em;
+}
+
+.definition li + li {
+  margin-top: 0.35em;
+}
+
+/* Keep consecutive Recognition definition lines together */
+
+.reading-card .definition {
+  white-space: normal;
+}
+
+.reading-card .definition p,
+.reading-card .definition div {
+  margin: 0;
+}
+
+/* Recall */
+
+.production-card .definition {
+  margin: 1.4rem auto 0;
+  white-space: normal;
+  text-align: center;
+}
+
+.production-card .definition p,
+.production-card .definition div {
+  margin: 0;
+}
+
+.production-card.recall-question .definition {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.production-card .hanzi.compact {
+  margin: 0 auto 0.5rem;
+  color: var(--text);
+  font-size: clamp(2.75rem, 9vw, 3.75rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.035em;
+  overflow-wrap: anywhere;
+}
+
+.production-card .pinyin {
+  margin: 0.35rem auto 0;
+  color: var(--accent);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* Compact audio control */
+
+.audio-panel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin: 1.3rem 0 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+.audio-panel > span,
+.context > span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.audio-panel .replay-button,
+.audio-panel .soundLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.audio-panel .replay-button svg {
+  width: 28px;
+  height: 28px;
+}
+
+.audio-panel .replay-button svg circle {
+  fill: var(--surface-soft);
+  stroke: var(--border);
+}
+
+.audio-panel .replay-button svg path {
+  fill: var(--accent);
+}
+
+/* Usage example */
+
+.context {
+  margin: 1.5rem 0 0;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid #eee8f3;
+  border-radius: 10px;
+  background: var(--surface-soft);
+  color: #665a74;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.8;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.context > span {
+  margin-bottom: 0.45rem;
+}
+
+.context p {
+  margin: 0.35em 0;
+}
+
+.context p:last-child {
+  margin-bottom: 0;
+}
+
+/* Phone layout */
+
+@media (max-width: 420px) {
+  .card {
+    padding: 14px;
+  }
+
+  .card-shell {
+    padding: 28px 23px;
+    border-radius: 16px;
+  }
+
+  .question-card {
+    padding-top: 34px;
+    padding-bottom: 38px;
+  }
+
+  .reading-card .hanzi.compact,
+  .production-card .hanzi.compact {
+    font-size: 2.75rem;
+  }
+
+  .answer-divider {
+    margin-top: 1.5rem;
+  }
+
+  .context {
+    padding: 1rem;
+  }
+}
